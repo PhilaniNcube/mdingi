@@ -79,8 +79,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-background/70 mt-0.5 shrink-0" />
                 <span className="text-sm text-background/70">
-                  123 Healthcare Drive<br />
-                  Johannesburg, South Africa
+                   11193 Nareng Street<br />
+                  Daveyton, Johannesburg, 1520
                 </span>
               </li>
               <li className="flex items-center gap-3">

@@ -18,6 +18,7 @@ export async function createBooking(
     phone: formData.get('phone'),
     service: formData.get('service'),
     date: formData.get('date'),
+    time: formData.get('time'),
     notes: formData.get('notes') || undefined,
   }
 
@@ -42,6 +43,7 @@ export async function createBooking(
         phone: result.data.phone,
         service: result.data.service,
         date: result.data.date,
+        time: result.data.time,
         notes: result.data.notes ?? '',
         status: 'pending',
       },

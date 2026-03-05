@@ -26,8 +26,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    details: ["123 Healthcare Drive", "Johannesburg, South Africa"],
-    action: { href: "#", label: "Get directions" },
+    details: ["11193 Nareng Street, ","Daveyton, ", "Johannesburg," ,"1520"],
+    action: null,
   },
   {
     icon: Clock,
