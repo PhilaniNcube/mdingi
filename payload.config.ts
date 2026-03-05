@@ -13,7 +13,10 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || 'mdingi-midwifery-secret-key-change-in-production',
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URL || '',
+      connectionString: (process.env.DATABASE_URL || '').replace(
+        'sslmode=require',
+        'sslmode=verify-full',
+      ),
     },
     push: process.env.NODE_ENV === 'development',
   }),
