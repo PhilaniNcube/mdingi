@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, CalendarDays, Clock, User } from "lucide-react"
 import { getPostBySlug } from "@/lib/payload"
 import { RichText } from "@payloadcms/richtext-lexical/react"
+import type { SerializedEditorState, SerializedLexicalNode } from "@payloadcms/richtext-lexical/lexical"
 
 // Placeholder blog posts data - fallback when CMS is not configured
 const placeholderPosts = [
@@ -349,7 +350,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+ 
       <main className="flex-1">
         {/* Hero Image */}
         <div className="relative h-[40vh] lg:h-[50vh] bg-muted">
@@ -401,7 +402,7 @@ export default async function BlogPostPage({ params }: Props) {
                 prose-li:text-muted-foreground
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-foreground">
-                <RichText data={post.content} />
+                <RichText data={post.content as SerializedEditorState<SerializedLexicalNode>} />
               </div>
             ) : (
               <div 
@@ -411,7 +412,7 @@ export default async function BlogPostPage({ params }: Props) {
                   prose-li:text-muted-foreground
                   prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                   prose-strong:text-foreground"
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{ __html: post.content as string }}
               />
             )}
 
@@ -433,7 +434,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Spacing */}
         <div className="h-16 lg:h-24" />
       </main>
-      <Footer />
+
     </div>
   )
 }

@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -62,8 +64,10 @@ export default function FrontendLayout({
       <body
         className={`${dmSans.variable} ${playfair.variable} font-sans antialiased`}
       >
+        <Header />
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   )

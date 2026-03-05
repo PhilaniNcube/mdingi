@@ -40,7 +40,7 @@ const contactInfo = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+ 
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-secondary/50 to-background py-16 lg:py-24">
@@ -126,7 +126,7 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <Footer />
+
     </div>
   )
 }

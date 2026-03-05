@@ -6,10 +6,11 @@ import { Posts } from './collections/Posts'
 import { Media } from './collections/Media'
 import { Users } from './collections/Users'
 import { Categories } from './collections/Categories'
+import { Bookings } from './collections/Bookings'
 
 export default buildConfig({
   editor: lexicalEditor(),
-  collections: [Users, Posts, Media, Categories],
+  collections: [Users, Posts, Media, Categories, Bookings],
   secret: process.env.PAYLOAD_SECRET || 'mdingi-midwifery-secret-key-change-in-production',
   db: postgresAdapter({
     pool: {
